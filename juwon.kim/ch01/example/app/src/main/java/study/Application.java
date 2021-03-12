@@ -5,6 +5,7 @@ public class Application implements OnClickListener {
 //  private Menu menu1 = new Menu("menu1");
 //  private Menu menu2 = new Menu("menu2");
 //  private Button button1 = new Button("button1");
+//  private Button button2 = new Button("button2");
 
   private String currentMenu = null;
 
@@ -12,6 +13,7 @@ public class Application implements OnClickListener {
 //    menu1.setOnClickListener(this);
 //    menu2.setOnClickListener(this);
 //    button1.setOnClickListener(this);
+//    button2.setOnClickListener(this);
   }
 
   @Override
@@ -28,6 +30,15 @@ public class Application implements OnClickListener {
         processButton1WhenMenu1();
       } else if (currentMenu.equals("menu2")) {
         processButton1WhenMenu2();
+      }
+    } else if (eventSource.getId().equals("button2")) {
+      if (currentMenu == null) {
+        return;
+      }
+      if (currentMenu.equals("menu1")) {
+        processButton2WhenMenu1();
+      } else if (currentMenu.equals("menu2")) {
+        processButton2WhenMenu2();
       }
     }
   }
@@ -48,5 +59,13 @@ public class Application implements OnClickListener {
 
   void processButton1WhenMenu2() {
     System.out.println("메뉴 2 화면의 버튼 1 처리");
+  }
+
+  void processButton2WhenMenu1() {
+    System.out.println("메뉴 1 화면의 버튼 2 처리");
+  }
+
+  void processButton2WhenMenu2() {
+    System.out.println("메뉴 2 화면의 버튼 2 처리");
   }
 }

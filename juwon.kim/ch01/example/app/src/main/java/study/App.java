@@ -5,7 +5,9 @@ public class App {
     Application app = new Application();
     app.clicked(new Menu("menu1"));
     app.clicked(new Button("button1"));
+    app.clicked(new Button("button2"));
     app.clicked(new Menu("menu2"));
     app.clicked(new Button("button1"));
+    app.clicked(new Button("button2"));
   }
 }
