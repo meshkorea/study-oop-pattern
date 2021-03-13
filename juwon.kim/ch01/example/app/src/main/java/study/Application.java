@@ -38,6 +38,8 @@ public class Application {
       String sourceId = eventSource.getId();
       if (sourceId.equals("button1")) {
         currentScreen.handleButton1Click();
+      } else if (sourceId.equals("button2")) {
+        currentScreen.handleButton2Click();
       }
     }
   };
