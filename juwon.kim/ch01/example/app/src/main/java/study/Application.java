@@ -12,6 +12,7 @@ public class Application {
   public Application() {
 //    menu1.setOnClickListener(this);
 //    menu2.setOnClickListener(this);
+//    menu3.setOnClickListener(this);
 //    button1.setOnClickListener(this);
 //    button2.setOnClickListener(this);
   }
@@ -24,6 +25,8 @@ public class Application {
         currentScreen = new Menu1ScreenUI();
       } else if (sourceId.equals("menu2")) {
         currentScreen = new Menu2ScreenUI();
+      } else if (sourceId.equals("menu3")) {
+        currentScreen = new Menu3ScreenUI();
       }
       currentScreen.show();
     }

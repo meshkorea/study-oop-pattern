@@ -10,5 +10,9 @@ public class App {
     app.menuListener.clicked(new Menu("menu2"));
     app.buttonListener.clicked(new Button("button1"));
     app.buttonListener.clicked(new Button("button2"));
+
+    app.menuListener.clicked(new Menu("menu3"));
+    app.buttonListener.clicked(new Button("button1"));
+    app.buttonListener.clicked(new Button("button2"));
   }
 }
