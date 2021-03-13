@@ -1,6 +1,6 @@
 package study;
 
-public class Application implements OnClickListener {
+public class Application {
 
 //  private Menu menu1 = new Menu("menu1");
 //  private Menu menu2 = new Menu("menu2");
@@ -16,21 +16,29 @@ public class Application implements OnClickListener {
 //    button2.setOnClickListener(this);
   }
 
-  @Override
-  public void clicked(Component eventSource) {
-    String sourceId = eventSource.getId();
-    if (sourceId.equals("menu1")) {
-      currentScreen = new Menu1ScreenUI();
+  public OnClickListener menuListener = new OnClickListener() {
+    @Override
+    public void clicked(Component eventSource) {
+      String sourceId = eventSource.getId();
+      if (sourceId.equals("menu1")) {
+        currentScreen = new Menu1ScreenUI();
+      } else if (sourceId.equals("menu2")) {
+        currentScreen = new Menu2ScreenUI();
+      }
       currentScreen.show();
-    } else if (sourceId.equals("menu2")) {
-      currentScreen = new Menu2ScreenUI();
-      currentScreen.show();
-    } else if (sourceId.equals("button1")) {
+    }
+  };
+
+  public OnClickListener buttonListener = new OnClickListener() {
+    @Override
+    public void clicked(Component eventSource) {
       if (currentScreen == null) {
         return;
       }
-      // 메뉴1인지 메뉴2인지 상관없이 currentScreen의 메서드를 실행
-      currentScreen.handleButton1Click();
+      String sourceId = eventSource.getId();
+      if (sourceId.equals("button1")) {
+        currentScreen.handleButton1Click();
+      }
     }
-  }
+  };
 }
