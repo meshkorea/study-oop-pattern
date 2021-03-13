@@ -7,7 +7,7 @@ public class Application implements OnClickListener {
 //  private Button button1 = new Button("button1");
 //  private Button button2 = new Button("button2");
 
-  private String currentMenu = null;
+  private ScreenUI currentScreen = null;
 
   public Application() {
 //    menu1.setOnClickListener(this);
@@ -18,54 +18,19 @@ public class Application implements OnClickListener {
 
   @Override
   public void clicked(Component eventSource) {
-    if (eventSource.getId().equals("menu1")) {
-      changeUIToMenu1();
-    } else if (eventSource.getId().equals("menu2")) {
-      changeUIToMenu2();
-    } else if (eventSource.getId().equals("button1")) {
-      if (currentMenu == null) {
+    String sourceId = eventSource.getId();
+    if (sourceId.equals("menu1")) {
+      currentScreen = new Menu1ScreenUI();
+      currentScreen.show();
+    } else if (sourceId.equals("menu2")) {
+      currentScreen = new Menu2ScreenUI();
+      currentScreen.show();
+    } else if (sourceId.equals("button1")) {
+      if (currentScreen == null) {
         return;
       }
-      if (currentMenu.equals("menu1")) {
-        processButton1WhenMenu1();
-      } else if (currentMenu.equals("menu2")) {
-        processButton1WhenMenu2();
-      }
-    } else if (eventSource.getId().equals("button2")) {
-      if (currentMenu == null) {
-        return;
-      }
-      if (currentMenu.equals("menu1")) {
-        processButton2WhenMenu1();
-      } else if (currentMenu.equals("menu2")) {
-        processButton2WhenMenu2();
-      }
+      // 메뉴1인지 메뉴2인지 상관없이 currentScreen의 메서드를 실행
+      currentScreen.handleButton1Click();
     }
-  }
-
-  void changeUIToMenu1() {
-    currentMenu = "menu1";
-    System.out.println("메뉴 1 화면으로 전환");
-  }
-
-  void changeUIToMenu2() {
-    currentMenu = "menu2";
-    System.out.println("메뉴 2 화면으로 전환");
-  }
-
-  void processButton1WhenMenu1() {
-    System.out.println("메뉴 1 화면의 버튼 1 처리");
-  }
-
-  void processButton1WhenMenu2() {
-    System.out.println("메뉴 2 화면의 버튼 1 처리");
-  }
-
-  void processButton2WhenMenu1() {
-    System.out.println("메뉴 1 화면의 버튼 2 처리");
-  }
-
-  void processButton2WhenMenu2() {
-    System.out.println("메뉴 2 화면의 버튼 2 처리");
   }
 }
