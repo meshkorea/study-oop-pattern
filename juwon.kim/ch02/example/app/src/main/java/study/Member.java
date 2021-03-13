@@ -24,6 +24,14 @@ public class Member {
     return expiryDate;
   }
 
+  public boolean isExpired() {
+    if (male) {
+      return getExpiryDate() != null && getExpiryDate().isBefore(LocalDate.now());
+    }
+
+    return getExpiryDate() != null && getExpiryDate().isBefore(LocalDate.now().minusDays(30));
+  }
+
   public boolean isMale() {
     return male;
   }
