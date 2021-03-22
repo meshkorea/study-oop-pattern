@@ -4,7 +4,7 @@
 
 인지부하
 
-MECE : 이거 뭐여!
+MECE
 -> elseif, else등으 남발하면 MECE를 어기게 된다.
 
 
