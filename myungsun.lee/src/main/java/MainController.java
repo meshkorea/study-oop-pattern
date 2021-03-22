@@ -12,10 +12,14 @@ public class MainController {
   }
 
   private void process(String command) {
+    ICommand cmd = null;
     if("list".equals(command)) {
-      System.out.println("command =" + command + " 호출 되었습니다.");
+      //System.out.println("command =" + command + " 호출 되었습니다.");
+      cmd = new ListCommand();
+      cmd.process("List Message");
     }else if("read".equals(command)){
-      System.out.println("command =" + command + " 호출 되었습니다.");
+      cmd = new ReadCommand();
+      cmd.process("Read Message");
     }else if("detail".equals(command)){
       System.out.println("command =" + command + " 호출 되었습니다.");
     }else{
