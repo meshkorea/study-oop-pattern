@@ -1,0 +1,38 @@
+@startuml
+
+package "ui" #DDDDDD {
+  class JobCLI {}
+}
+
+package "transcoder" #DDDDDD {
+  class JobData {
+    source: File
+    target: File
+  }
+
+  class Worker {
+    run()
+  }
+
+  interface JobQueue {
+    +addJob(job: JobData)
+    +getJob(): JobData
+  }
+
+  interface Transcoder {
+    +trandcode(source: File, target: File)
+  }
+}
+
+class FileJobQueue implements JobQueue {}
+class DbJobQueue implements JobQueue {}
+class FfmpegTranscoder implements Transcoder {}
+class SolTranscoder implements Transcoder {}
+
+JobCLI .d.> JobQueue
+JobQueue .l.> JobData
+Worker ..> JobData
+Worker ..> JobQueue
+Worker ..> Transcoder
+
+@enduml
