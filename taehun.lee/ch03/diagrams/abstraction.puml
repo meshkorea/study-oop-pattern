@@ -1,0 +1,13 @@
+@startuml
+LogCollector <|-- FtpLogFileDownloader
+LogCollector <|-- SocketLogReader
+LogCollector <|-- DbTableLogGateway
+
+interface LogCollector {
+  +collect()
+}
+
+class FtpLogFileDownloader {}
+class SocketLogReader {}
+class DbTableLogGateway {}
+@enduml
