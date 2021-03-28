@@ -1,0 +1,1 @@
+https://www.notion.so/Chapter-05-SOLID-04a37388ee684a73bb8451583a185e8b
