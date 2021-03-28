@@ -1,4 +1,4 @@
-# 정리
+# 객체지향
 
 Patterns always have two parts: the how and the when.
 - Martin Fowler의 [LocalDTO](https://martinfowler.com/bliki/LocalDTO.html)에서
