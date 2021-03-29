@@ -37,17 +37,22 @@ public class DataViewer {
     // 기타 필등 등 다른 코드
 }
 ```
-> [그림 5.1] 한 책임의 변화가 다른 책임의 코드에 영향을 주는 현상  
+> [그림 5.1] 한 책임의 변화가 다른 책임의 코드에 영향을 주는 현상
+![5.1](./images/image5-1.jpeg)  
 > [그림 5.2] 책임을 분리하면 변경의 여파를 줄일수 있다.
+![5.2](./images/image5-2.jpeg)
 
 한편, SRP 지치지 않는다면 `재사용`도 어려움
 > [그림 5.3] 책임이 분리되어 있지 않아 필요하지 않은 패캐지까지 필요하다.  
+![5.3](./images/image5-3.jpeg)
 > [그림 5.4] 단일 책임 원칙을 준수하면 재 사용성을 높일 수 있다.
+![5.4](./images/image5-4.jpeg)
 
 #### 1.2 책임이란 변화에 대한 것
 - 책임의 단위는 변화되는 부분과 관련
 - 각각의 책임은 *서로 다른 이유로 변경*되고, 서로 다른 비율로 변경되는 특징
 > [그림 5.5] 단일 책임 원칙을 지키는지 확인할 때에는 사용자를 확인해본다.
+![5.5](./images/image5-5.jpeg)
   
 ### 2. 개방-폐쇄 원칙 (Open-closed principle)
 "확장에는 열려 있어야 하고, 변경에는 닫혀 있어야 한다."
@@ -57,6 +62,7 @@ public class DataViewer {
 **개방-폐쇄 원칙을 구현하는 방법(1): 추상화**  
 확장(변경)되는 부분을 추상화해서 표현하면, 사용하는 클래스(e.g.Flow Controller) 입장에서는 메소드 고정 가능
 > [그림 5.6] 추상화를 이용한 개방 폐쇄 원치 구현  
+![5.6](./images/image5-6.jpeg)
 
 **개방-폐쇄 원칙을 구현하는 방법(2): 상속**  
 상위 클래스 기능 그대로 사용하면서, 하위 클래스 일부 구현을 오버라이딩
@@ -102,6 +108,7 @@ public class ZippedResponseSender extends ResponseSender {
 
 **OCP 위반하는 코드 특징(1): 다운 캐스팅을 한다**
 > [그림 5.7] 각자 그리는 기능을 제공하는 코드
+![5.7](./images/image5-7.jpeg)
 ```java
 public void drawCharacter(Character character) {
     if (character instanceof Missile) { // 타입확인
@@ -137,6 +144,7 @@ public class Enemy extends Chararter {
 }
 ```
 > [그림 5.8] 이동 경로 계산에 개방 폐쇄 원칙을 적용한 결과
+![5.8](./images/image5-8.jpeg)
 
 Enemy 클래스에 새로운 경로 패턴을 추가해야 할 경우 draw() 메서드에 새로운 if 블록 추가 (변경에 닫혀 있지 않음)
 경로 패턴을 추상화하고 Enemy 클래스에서 추상화 타입을 사용하는 구조로 변경
