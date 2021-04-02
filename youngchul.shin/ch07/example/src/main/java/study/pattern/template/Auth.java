@@ -1,2 +1,5 @@
-package study.pattern.template;public class Auth {
+package study.pattern.template;
+
+public class Auth {
+
 }
