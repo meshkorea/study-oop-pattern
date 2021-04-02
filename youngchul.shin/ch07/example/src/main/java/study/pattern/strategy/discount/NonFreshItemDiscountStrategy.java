@@ -1,6 +1,6 @@
-package study.pattern.discount;
+package study.pattern.strategy.discount;
 
-import study.pattern.Item;
+import study.pattern.strategy.Item;
 
 public class NonFreshItemDiscountStrategy implements DiscountStrategy {
 

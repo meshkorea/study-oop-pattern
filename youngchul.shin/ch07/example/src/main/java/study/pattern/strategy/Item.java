@@ -1,4 +1,4 @@
-package study.pattern;
+package study.pattern.strategy;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

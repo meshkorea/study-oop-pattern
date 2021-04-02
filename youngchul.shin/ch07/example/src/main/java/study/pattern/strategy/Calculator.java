@@ -1,7 +1,7 @@
-package study.pattern;
+package study.pattern.strategy;
 
 import java.util.List;
-import study.pattern.discount.DiscountStrategy;
+import study.pattern.strategy.discount.DiscountStrategy;
 
 public class Calculator {
 
