@@ -1,64 +1,61 @@
 package study.pattern.state;
 
-public class VendingMachine {
-  public static enum State { NOCOIN, SELECTABLE, SOLDOUT }
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import study.pattern.state.states.NoCoinState;
+import study.pattern.state.states.State;
 
-  private State state = State.NOCOIN;
+public class VendingMachine {
+
+  // SOLDOUT을 구현하려면 Product 추가/판매 기능 추가 및 연관된 재고 정보를 가지고 있어야한다
+  private Map<Integer, Product> products = new HashMap<>();
+
+  private State state;
 
   private int coin;
 
+  public VendingMachine(Product... products) {
+    this.state = new NoCoinState();
+
+    Arrays.stream(products)
+        .forEach(p -> this.products.put(p.getId(), p));
+  }
+
   public void insertCoin(int coin) {
-    switch (state) {
-      case NOCOIN:
-        increaseCoin(coin);
-        state = State.SELECTABLE;
-        break;
-      case SELECTABLE:
-        increaseCoin(coin);
-        break;
-      case SOLDOUT:
-        returnCoin();
-    }
+    state.increaseCoin(coin, this);
   }
 
   public void select(int productId) {
-    switch (state) {
-      case NOCOIN:
-        break;
-      case SELECTABLE:
-        provideProduct(productId);
-        decreaseCoin(getProductPrice(productId));
-        if (hasNoCoin()) {
-          state = State.NOCOIN;
-        }
-        break;
-      case SOLDOUT:
-        // do nothing
-    }
+    state.select(productId, this);
   }
 
-  private void increaseCoin(int coin) {
+  public void increaseCoin(int coin) {
     this.coin += coin;
   }
 
-  private void decreaseCoin(int coin) {
-
+  public void decreaseCoin(int coin) {
+    this.coin -= coin;
   }
 
-  private void returnCoin() {
+  public void returnCoin() {
     coin = 0;
   }
 
-  private void provideProduct(int productId) {
+  public void changeState(State state) {
+    this.state = state;
+  }
+
+  public void provideProduct(int productId) {
     System.out.println(productId + "제품을 제공합니다");
   }
 
-  private int getProductPrice(int productId) {
-    return 10;  // 임시 코드
-  }
-
-  private boolean hasNoCoin() {
+  public boolean hasNoCoin() {
     return coin == 0;
   }
 
+  public int getProductPrice(int productId) {
+    Product product = products.get(productId);
+    return product.getPrice();
+  }
 }
