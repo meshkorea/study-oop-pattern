@@ -1,7 +1,7 @@
 package study.pattern.state;
 
 public class VendingMachine {
-  public static enum State { NOCOIN, SELECTABLE }
+  public static enum State { NOCOIN, SELECTABLE, SOLDOUT }
 
   private State state = State.NOCOIN;
 
@@ -16,6 +16,8 @@ public class VendingMachine {
       case SELECTABLE:
         increaseCoin(coin);
         break;
+      case SOLDOUT:
+        returnCoin();
     }
   }
 
@@ -29,6 +31,9 @@ public class VendingMachine {
         if (hasNoCoin()) {
           state = State.NOCOIN;
         }
+        break;
+      case SOLDOUT:
+        // do nothing
     }
   }
 
@@ -38,6 +43,10 @@ public class VendingMachine {
 
   private void decreaseCoin(int coin) {
 
+  }
+
+  private void returnCoin() {
+    coin = 0;
   }
 
   private void provideProduct(int productId) {
