@@ -13,4 +13,9 @@ public class SoldoutState implements State {
   public void select(int productId, VendingMachine vendingMachine) {
     // do nothing
   }
+
+  @Override
+  public boolean isSelectable() {
+    return false;
+  }
 }

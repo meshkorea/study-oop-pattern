@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import study.pattern.state.states.NoCoinState;
+import study.pattern.state.states.SelectableState;
 import study.pattern.state.states.State;
 
 public class VendingMachine {
@@ -24,10 +25,14 @@ public class VendingMachine {
 
   public void insertCoin(int coin) {
     state.increaseCoin(coin, this);
+    changeState(new SelectableState());
   }
 
   public void select(int productId) {
     state.select(productId, this);
+    if (state.isSelectable() && hasNoCoin()) {
+      changeState(new NoCoinState());
+    }
   }
 
   public void increaseCoin(int coin) {
@@ -42,7 +47,7 @@ public class VendingMachine {
     coin = 0;
   }
 
-  public void changeState(State state) {
+  private void changeState(State state) {
     this.state = state;
   }
 
@@ -50,7 +55,7 @@ public class VendingMachine {
     System.out.println(productId + "제품을 제공합니다");
   }
 
-  public boolean hasNoCoin() {
+  private boolean hasNoCoin() {
     return coin == 0;
   }
 
