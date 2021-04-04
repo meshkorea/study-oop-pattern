@@ -14,9 +14,9 @@ public class App {
         ArrayList<Item> items = new ArrayList<>();
         Item item = new Item(1000);
         items.add(item);
-        boolean firstGuest = false;
-        Calculator calculator = new Calculator();
-        int price = calculator.calculate(firstGuest, items);
+        DiscountStrategy discountStrategy = new FirstGuestDiscountStrategy();
+        Calculator calculator = new Calculator(discountStrategy);
+        int price = calculator.calculate(items);
         System.out.println(price);
     }
 }
