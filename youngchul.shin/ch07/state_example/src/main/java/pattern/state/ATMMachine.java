@@ -1,7 +1,5 @@
 package pattern.state;
 
-import pattern.state.states.ATMState;
-
 public class ATMMachine {
 
   ATMState hasCard;
