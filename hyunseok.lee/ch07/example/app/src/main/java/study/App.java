@@ -3,12 +3,20 @@
  */
 package study;
 
+import java.util.ArrayList;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        ArrayList<Item> items = new ArrayList<>();
+        Item item = new Item(1000);
+        items.add(item);
+        boolean firstGuest = false;
+        Calculator calculator = new Calculator();
+        int price = calculator.calculate(firstGuest, items);
+        System.out.println(price);
     }
 }
