@@ -1,9 +1,20 @@
 ## study-oop-pattern
 
-#### 책: 개발자가 반드시 정복해야 할 객체 지향과 디자인 패턴
-###### 챕터별 요약정리
-- [1장. 들어가기](./seungho.lee/ch01/SUMMARY.md)
-- [2장. 객체 지향](./seungho.lee/ch02/SUMMARY.md)
-- [3장. 다형성과 추상 타입](./seungho.lee/ch03/SUMMARY.md)
-- [5장. 설계 원칙: SOLID](./seungho.lee/ch05/SUMMARY.md)
-- [6장. DI와 서비스 로케이터](./seungho.lee/ch06/SUMMARY.md)
+- [위키 가이드 문서 필독](https://wiki.mm.meshkorea.net/pages/viewpage.action?pageId=99880690)
+- 회사 계정 이름을 가진 폴더를 만들고 자신의 파일을 작성합니다
+- 하위 폴더는 각자의 취향대로 자유롭게 구성합니다
+- 브랜치를 만들어서 파일을 작성하고, PR을 보내고, 스터디가 끝난 후 스스로 머지합니다
+
+```
+e.g.
+├── juwon.kim
+│   ├── ch01.md
+│   └── ch02.md
+└── yj.han
+    ├── ch01
+    │   ├── summary.md
+    │   └── img01.png
+    └── ch02
+        ├── summary.md
+        └── img01.png
+```
