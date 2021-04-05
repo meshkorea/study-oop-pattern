@@ -6,6 +6,26 @@
 - 실행 과정을 구현한 상위 클래스
 - 실행 과정의 일부 단계를 구현한 하위 클래스
 
+```
+public abstract SuperClass {
+    public templateMethod() {
+        method1();
+        method2();
+        method3();
+    }
+
+    private method1(){
+        // do something
+    }
+
+    protected abstract method2();
+
+    protected method3() {
+
+    }
+}
+```
+
 ## 3.1 상위 클래스가 흐름 제어 주체
 
 템플릿 메서드 패턴의 특징은 하위 클래스가 아닌 상위 클래스에서 흐름 제어를 한다는 것이다. 
