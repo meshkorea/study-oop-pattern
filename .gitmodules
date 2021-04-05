@@ -2,3 +2,7 @@
 	path = taehun.lee/ch06/example
 	url = https://github.com/meshkrtaehunlee/study-oop-pattern-di-sl.git
 	branch = step5
+[submodule "taehun.lee/ch07/strategy/example"]
+	path = taehun.lee/ch07/strategy/example
+	url = https://github.com/thxwelchs/oop-design-pattern.git
+	branch = master
