@@ -24,3 +24,4 @@
   - State를 abstract 클래스로 변경하는 건 괜찮을 것 같음. 그런데 state를 하위 클래스에서 재선언 할 수 없어서 실패(자바 문법을 모른 탓 같음)
   - getStateType()만 abstract 클래스로 변경하려니 VendingMachine 클래스가 state 객체 getStateType()과 인터페이스의 메소드 모두 사용하고 있어서 안 됨
   - 결국 getStateType()을 interface에 넣은 것이 문제로 보이고, 이걸 추가로 만든 목적은 테스트에서의 비교 때문인 것 같은데, 더 좋은 방법을 모르겠음
+- -> 스터디 시간에 interface에 default를 선언하면 되는 것으로 들었음
