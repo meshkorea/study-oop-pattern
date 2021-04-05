@@ -1,18 +1,16 @@
 package study;
 
-public class DbAuthenticator {
-    public Auth authenticate(String id, String pw) throws Exception {
+public class DbAuthenticator extends Authenticator{
+    @Override
+    protected Auth createAuth(String id) {
         User user = userDao.selectById(id);
-        boolean auth = user.equalPassword(pw);
-
-        if(! auth) {
-            throw createException();
-        }
-
         return new Auth(id, user.getUserName());
     }
 
-    private Exception createException() {
-        return new AuthException();
+    @Override
+    protected boolean doAuthenticate(String id, String pw) {
+        User user = userDao.selectById(id);
+        boolean auth = user.equalPassword(pw);
+        return auth;
     }
 }

@@ -1,19 +1,15 @@
 package study;
 
-public class LdapAuthenticator {
-    public Auth authenticate(String id, String pw) {
-        boolean auth = ldapClient.authenticate(id, pw);
-
-        if(! auth) {
-            throw createException();
-        }
-
+public class LdapAuthenticator extends Authenticator {
+    @Override
+    protected Auth createAuth(String id) {
         ldapContext ctx = ldapClient.find(id);
-
         return new Auth(id, ctx.getAttribute("name"));
     }
 
-    private Exception createException() {
-        return new AuthException();
+    @Override
+    protected boolean doAuthenticate(String id, String pw) {
+        return ldapClient.authenticate(id, pw);
+
     }
 }
