@@ -1,0 +1,24 @@
+@startuml
+
+skinparam linetype ortho
+
+class App {}
+
+interface FileOut {
+  + write(data: byte[]): void
+}
+
+abstract class Decorator implements FileOut {
+  - delegate: FileOut
+  # doDelegate(data: byte[]): void
+}
+
+class FileOutImpl implements FileOut {}
+
+class EncryptionOut extends Decorator {}
+
+class ZipOut extends Decorator {}
+
+App -> FileOut
+
+@enduml
