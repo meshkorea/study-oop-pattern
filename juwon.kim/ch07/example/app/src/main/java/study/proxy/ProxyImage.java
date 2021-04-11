@@ -12,7 +12,7 @@ public class ProxyImage implements Image {
   @Override
   public void draw() {
     if (image == null) {
-      image = new RealImage(path);
+      image = new RealImage(path); // 캐슁
     }
     image.draw();
   }

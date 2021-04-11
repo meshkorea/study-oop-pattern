@@ -4,20 +4,24 @@ skinparam linetype ortho
 
 class App {}
 
-interface FileOut {
+interface FileOut <<component>> {
   + write(data: byte[]): void
 }
 
-abstract class Decorator implements FileOut {
+class FileOutImpl <<concrete component>> implements FileOut {}
+
+abstract class Decorator <<decorator>> implements FileOut {
   - delegate: FileOut
   # doDelegate(data: byte[]): void
 }
 
-class FileOutImpl implements FileOut {}
+class EncryptionOut <<decorator>> extends Decorator {}
 
-class EncryptionOut extends Decorator {}
-
-class ZipOut extends Decorator {}
+class ZipOut <<decorator>> extends Decorator {}
+note left
+  A decorator is a component
+  A decorator has a component
+end note
 
 App -> FileOut
 
