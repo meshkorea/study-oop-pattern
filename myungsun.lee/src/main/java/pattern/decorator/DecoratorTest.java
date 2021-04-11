@@ -16,6 +16,9 @@ package pattern.decorator;
  * java.io 패키지에서 데코레이터 패턴을 사용한다.
  * InputStream  (추상 component 역할)
  *  FilterInputStream (추상 decorator 역할)
+ *
+ *
+ *  데코레이터(Decorator) 패턴에서는 객체에 행동을 추가하지만, 프록시(Proxy)패턴에서는 접근을 제어합니다.
  */
 public class DecoratorTest {
 
