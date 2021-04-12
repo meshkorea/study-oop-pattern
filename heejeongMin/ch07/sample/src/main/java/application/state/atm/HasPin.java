@@ -1,4 +1,4 @@
-package application.state;
+package application.state.atm;
 
 public class HasPin implements ATMState {
 
