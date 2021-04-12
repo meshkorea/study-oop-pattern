@@ -1,0 +1,32 @@
+@startuml
+allow_mixing
+agent Client
+interface "**<Target>**\nEnemyAttacker" as EA {
+  fireWeapon(): void
+  driveForward(): void
+  assignDriver(String driverName): void
+}
+
+class "**<Adapter>**\nEnemyRobotAdapter" as ERA {
+  fireWeapon(): void
+  driveForward(): void
+  assignDriver(String: driverName): void
+}
+
+class "EnemyTank" as ET {
+  fireWeapon(): void
+  driveForward(): void
+  assignDriver(String: driverName): void
+}
+
+class "**<Adaptee>**\nEnemyRobot" as ER {
+  smashWithHand(): void
+  walkForward(): void
+  reactToHuman(String: driverName): void
+}
+
+Client -> EA
+EA <|.. ERA
+EA <|.. ET
+ERA -> ER
+@enduml
