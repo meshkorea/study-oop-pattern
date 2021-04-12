@@ -11,7 +11,6 @@ public class VendingMachine {
 
   // SOLDOUT을 구현하려면 Product 추가/판매 기능 추가 및 연관된 재고 정보를 가지고 있어야한다
   private Map<Integer, Product> products = new HashMap<>();
-
   private State state;
 
   private int coin;
