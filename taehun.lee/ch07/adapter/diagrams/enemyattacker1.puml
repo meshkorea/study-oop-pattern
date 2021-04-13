@@ -1,0 +1,18 @@
+@startuml
+allow_mixing
+agent Client
+interface "EnemyAttacker" as EA {
+  fireWeapon(): void
+  driveForward(): void
+  assignDriver(String driverName): void
+}
+
+class "EnemyTank" as ET {
+  fireWeapon(): void
+  driveForward(): void
+  assignDriver(String: driverName): void
+}
+
+Client -> EA
+EA <|..right.. ET
+@enduml
