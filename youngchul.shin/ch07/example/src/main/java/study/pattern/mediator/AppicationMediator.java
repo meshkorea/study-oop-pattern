@@ -4,10 +4,14 @@ import java.util.ArrayList;
 
 public class AppicationMediator implements Mediator {
 
-  private ArrayList<Colleague> colleagues;
+  private ArrayList<Colleague> colleagues = new ArrayList<>();
 
-  public AppicationMediator(ArrayList<Colleague> colleagues) {
-    this.colleagues = colleagues;
+  public void addColleague(Colleague colleague) {
+    if (colleagues.contains(colleague)) {
+      return;
+    }
+
+    colleagues.add(colleague);
   }
 
   @Override
