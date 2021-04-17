@@ -3,12 +3,22 @@
  */
 package oop;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import oop.section09.ApplicationMediator;
+import oop.section09.DesktopColleague;
+import oop.section09.MobileColleague;
+import oop.section09.NintendoSwitchColleague;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+
+        ApplicationMediator mediator = new ApplicationMediator();
+        var desktop = new DesktopColleague(mediator);
+        var mobile = new MobileColleague(mediator);
+        var nintendoSwitch = new NintendoSwitchColleague(mediator);
+        mediator.addColleague(desktop);
+        mediator.addColleague(mobile);
+        mediator.addColleague(nintendoSwitch);
+        desktop.send("desktop says, Hello World");
+        mobile.send("mobile says, Hello");
     }
 }
