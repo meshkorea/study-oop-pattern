@@ -6,5 +6,6 @@ public class ObserverClient {
     StatusChecker checker = new StatusChecker();
     checker.add(new StatusEmailSender());
     checker.add(new FaultStatusSMSSender());
+    checker.add(new SpecialStatusObserver(checker));
   }
 }

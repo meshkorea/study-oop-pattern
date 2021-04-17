@@ -13,4 +13,8 @@ public class StatusChecker extends StatusSubject {
   public Status loadStatus() {
     return new Status(StatusItem.NG);
   }
+
+  public boolean isContinuousFault() {
+    return true;
+  }
 }
