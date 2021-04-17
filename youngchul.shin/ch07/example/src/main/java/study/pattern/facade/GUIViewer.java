@@ -4,23 +4,13 @@ import java.io.File;
 
 public class GUIViewer {
 
-  EmpDao empDao;
-  EvaluationDao evaluationDao;
-  ResumeDao resumeDao;
-
-  public GUIViewer(EmpDao empDao, EvaluationDao evaluationDao, ResumeDao resumeDao) {
-    this.empDao = empDao;
-    this.evaluationDao = evaluationDao;
-    this.resumeDao = resumeDao;
-  }
+  private EmpReportDaoFacade reportDaoFacade = new EmpReportDaoFacade();
 
   public void export(File file) {
     // 생략
 
-    Emp emp = empDao.select(1);
-    Evaluation evaluation = evaluationDao.select(1);
-    Resume resume = resumeDao.select(1);
+    EmpReport empReportData = reportDaoFacade.getEmpReportData(1l);
 
-    // 조합해서 Display
+    // Report Data를 이용해서 Display 코드 구현
   }
 }
