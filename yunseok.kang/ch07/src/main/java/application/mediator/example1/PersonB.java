@@ -1,3 +1,5 @@
+package application.mediator.example1;
+
 public class PersonB extends Colleague {
 
     public PersonB(Mediator newMediator) {

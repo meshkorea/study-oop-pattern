@@ -1,3 +1,5 @@
+package application.observer;
+
 /**
  * `update` method is called when Subject changes
  */

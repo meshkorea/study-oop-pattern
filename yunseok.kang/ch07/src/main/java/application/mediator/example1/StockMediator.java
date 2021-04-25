@@ -1,3 +1,5 @@
+package application.mediator.example1;
+
 import java.util.ArrayList;
 
 public class StockMediator implements Mediator {

@@ -1,3 +1,5 @@
+package application.observer;
+
 public interface Subject {
 
     public void register(Observer o);
