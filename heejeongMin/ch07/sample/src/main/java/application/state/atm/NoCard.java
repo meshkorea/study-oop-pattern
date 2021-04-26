@@ -2,6 +2,7 @@ package application.state.atm;
 
 public class NoCard implements ATMState {
 
+
   ATMMachine atmMachine;
 
   public NoCard(ATMMachine newATMMachine){

@@ -2,6 +2,7 @@ package application.state.atm;
 
 public class HasPin implements ATMState {
 
+
   ATMMachine atmMachine;
 
   public HasPin(ATMMachine newATMMachine){

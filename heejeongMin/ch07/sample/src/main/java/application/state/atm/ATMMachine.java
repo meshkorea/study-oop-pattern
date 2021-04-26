@@ -2,6 +2,7 @@ package application.state.atm;
 
 public class ATMMachine {
 
+
   ATMState hasCard;
   ATMState noCard;
   ATMState hasCorrectPin;

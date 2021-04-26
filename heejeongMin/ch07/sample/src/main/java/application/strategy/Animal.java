@@ -28,6 +28,7 @@ public class Animal {
   // Composition allows you to change the capabilities of
   // objects at run time!
 
+
   public Flys flyingType;
 
   public void setName(String newName){ name = newName; }

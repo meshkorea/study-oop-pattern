@@ -7,4 +7,5 @@ public class CantFly implements Flys{
       return "I can't fly";
 
     }
+
 }

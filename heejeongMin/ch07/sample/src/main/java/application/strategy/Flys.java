@@ -13,3 +13,4 @@ package application.strategy;
 public interface Flys {
     String fly();
 }
+

@@ -8,7 +8,6 @@ package application.state.coffee;
 4. 분쇄버튼을 누른다.  - grindBeans
 5. extract 한다. - extractCoffee
 
-
   Context(Account) : CoffeeMachine
     --> CoffeeMachine이 현재 상태를 나타낸다.
 
