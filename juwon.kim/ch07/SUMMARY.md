@@ -247,3 +247,18 @@ public class DataSourceBasedMultiTenantConnectionProviderImpl
 ![](resources/10-facade-order.svg)
 
 ![](resources/10-facade-order-sq.svg)
+
+## 11 추상 팩토리
+
+![](resources/11-abstractfactory.svg)
+
+## 12 컴포지트
+
+![](resources/12-composite.svg)
+
+### TCP 전문 해석 Example
+
+![](resources/12-composite-tcp.svg)
+
+[https://github.com/meshkorea/vroong-cuadaptor/pull/38/files](https://github.com/meshkorea/vroong-cuadaptor/pull/38/files)
+
