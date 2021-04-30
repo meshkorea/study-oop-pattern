@@ -1,3 +1,5 @@
+package application.mediator.example1;
+
 public class StockOffer {
 
     private int stockShares = 0;

@@ -1,3 +1,5 @@
+package application.mediator.example1;
+
 public interface Mediator {
 
     public void saleOffer(String stock, int shares, int collCode);

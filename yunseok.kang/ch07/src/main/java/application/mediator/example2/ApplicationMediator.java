@@ -1,3 +1,7 @@
+package application.mediator.example2;
+
+import java.util.ArrayList;
+
 public class ApplicationMediator implements Mediator {
 
     private ArrayList<Colleague> colleagues;
@@ -15,7 +19,7 @@ public class ApplicationMediator implements Mediator {
         for (Colleague colleague: colleagues) {
             // But not itself
             if (colleague != originator) {
-                colleage.receive(message);
+                colleague.receive(message);
             }
         }
     }

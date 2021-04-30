@@ -1,3 +1,5 @@
+package application.mediator.example1;
+
 public abstract class Colleague {
 
     private Mediator mediator;

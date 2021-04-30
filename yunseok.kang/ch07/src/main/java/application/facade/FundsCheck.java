@@ -1,3 +1,5 @@
+package application.facade;
+
 public class FundsCheck {
 
     private double cashInAccount = 1000.00;

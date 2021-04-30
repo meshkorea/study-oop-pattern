@@ -1,3 +1,5 @@
+package application.facade;
+
 public class BankAccountFacade {
 
     private int accountNumber;
@@ -11,7 +13,6 @@ public class BankAccountFacade {
         this.securityCode = newSecCode;
 
         acctChecker = new AccountNumberCheck();
-        codeChecker = new SecurityCodeCheck();
     }
 
     public int getAccountNumber() {

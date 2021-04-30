@@ -1,10 +1,12 @@
-public abstract Colleague {
+package application.mediator.example2;
+
+public abstract class Colleague {
 
     private Mediator mediator;
 
-    public Colleague(Mediator m) {
-        mediator = m;
-    }
+//    public Colleague(Mediator m) {
+//        mediator = m;
+//    }
 
     public void send(String message) {
         mediator.send(message, this);
